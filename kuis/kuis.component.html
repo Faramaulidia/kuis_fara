@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-xl navbar-dark" style="background-color: #1E90FF;">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-5"><br>
+      <h3>FORM DATA MAHASISWA</h3>
+      <hr>
+      <label for="nim">NIM</label>
+      <input type="text" name="nim" id="nim" class="form-control" [(ngModel)]="nim">
+      <label for="nama">NAMA</label>
+      <input type="text" name="nama" id="nama" class="form-control" [(ngModel)]="nama">
+      <label for="kelas">KELAS</label>
+      <input type="text" name="kelas" id="kelas" class="form-control" [(ngModel)]="kelas">
+      <br/>
+      <button class="btn btn-block btn-blue" (click)="tambahMhs()" style="background-color: 	#1E90FF"> Tambah </button>   
+  </div>
+
+  <div class="col-md-6"><br>
+      <h3>DATA MAHASISWA</h3><hr>
+      <div class="card mb-3" *ngFor="let mhs of daftarMhs">
+        <div class="card-header">
+        <h3>{{ mhs.nama }}</h3>
+        </div>
+        <div class="card-body">
+        <h6 class="card-title">{{ mhs.nim }}</h6>
+        <h6 class="card-text">{{ mhs.kelas }}</h6>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
